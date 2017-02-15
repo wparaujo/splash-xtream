@@ -1,5 +1,7 @@
 class CreateUser < ActiveRecord::Migration[5.0]
   def change
-  	t.string :email
+  	create_table :users do |t|
+      t.string :email
+    end
   end
 end
