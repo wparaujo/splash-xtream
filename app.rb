@@ -8,13 +8,16 @@ get '/' do
 end
 
 post '/submit' do
-	@user = User.new(params[:user])
-
-	if @user.save
-		redirect '/'
-	else
-		"Model not was save."
-	end	
+	if User.exists?(email: params[:user][:email])
+		"email already exsts"
+	else 
+		@user = User.new(params[:user])
+		if @user.save
+			redirect '/'
+		else
+			"Model not was save."
+		end
+	end
 end
 
 get '/users' do
