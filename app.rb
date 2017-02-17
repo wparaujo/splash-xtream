@@ -20,7 +20,7 @@ post '/submit' do
 	end
 end
 
-get '/users' do
+get '/6384BE62BB1959FB3921C24934E93/users' do
 	@users = User.all
 	erb :users
 end
